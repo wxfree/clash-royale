@@ -1,17 +1,30 @@
 <template>
     <div>
         <card-index />
+        <button v-on:click="locate">跳转新的单页</button>
+        <router-view></router-view>
+        <my-footer />
     </div>
 </template>
 
 <script>
-import CardIndex from './components/cards/cards.vue'
+import CardIndex from '@/components/cards/cards.vue'
+import MyFooter from '@/components/footer/footer.vue'
 export default {
     components: {
-        CardIndex
+      MyFooter,
+      CardIndex
     },
-    data() {
-        return {}
+    data () {
+      return {}
+    },
+    methods: {
+      locate () {
+        console.log('111')
+        this.$router.push({
+          path: '/home'
+        })
+      }
     }
 }
 </script>
