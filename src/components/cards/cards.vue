@@ -33,56 +33,56 @@ export default {
             name: '天狗',
             rarity: 'lengendary',
             type: 'troop',
-            url: '../../../static/image/天狗.png'
+            url: '../../../static/image/flydog.png'
           },
           {
             id: 2,
             name: '气球',
             rarity: 'epic',
             type: 'troop',
-            url: '../../../static/image/气球.png'
+            url: '../../../static/image/balloon.png'
           },
           {
             id: 3,
             name: '毒药',
             rarity: 'epic',
             type: 'spell',
-            url: '../../../static/image/毒药.jpg'
+            url: '../../../static/image/poison.jpg'
           },
           {
             id: 4,
             name: '胖子',
             rarity: 'rare',
             type: 'troop',
-            url: '../../../static/image/胖子.png'
+            url: '../../../static/image/fat.png'
           },
           {
             id: 5,
             name: '迫击炮',
             rarity: 'common',
             type: 'building',
-            url: '../../../static/image/迫击炮.png'
+            url: '../../../static/image/mortar.png'
           },
           {
             id: 6,
             name: '女巫',
             rarity: 'epic',
             type: 'troop',
-            url: '../../../static/image/女巫.png'
+            url: '../../../static/image/witch.png'
           },
           {
             id: 7,
             name: '飞桶',
             rarity: 'epic',
             type: 'spell',
-            url: '../../../static/image/飞桶.png'
+            url: '../../../static/image/bucket.png'
           },
           {
             id: 8,
             name: '地狱飞龙',
             rarity: 'lengendary',
             type: 'troop',
-            url: '../../../static/image/地狱飞龙.png'
+            url: '../../../static/image/dragon.png'
           }
         ]
       }
@@ -115,24 +115,24 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
     .card-type {
         height: 40px;
         display: flex;
         flex-direction: row;
         justify-content: left;
         margin: 3%;
-    }
-    .text-border {
-        line-height: 40px;
-        font-size: 16px;
-        text-align: center;
-        border: 1px grey solid;
-        margin: 0 3%;
-        padding: 0 1%;
-    }
-    .curtype {
-        background-color: blue;
-        color: #ffffff;
+        & .text-border {
+          line-height: 40px;
+          font-size: 16px;
+          text-align: center;
+          border: 1px grey solid;
+          margin: 0 3%;
+          padding: 0 1%;
+        }
+        & .curtype {
+            background-color: blue;
+            color: #ffffff;
+        }
     }
 </style>

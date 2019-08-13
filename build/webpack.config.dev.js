@@ -30,10 +30,9 @@ module.exports = {
       }
     }
   },
-  devtool: 'cheap-module-eval-source-map',
+  devtool: 'source-map',
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(vue|js)$/,
         loader: 'eslint-loader',
         exclude: /node_modules/,
@@ -48,7 +47,8 @@ module.exports = {
         loader: 'babel-loader',
         options: {
           presets: ['@babel/env']
-        }
+        },
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
@@ -59,6 +59,29 @@ module.exports = {
             loader: 'postcss-loader'
           }
         ]
+      },
+      {
+        test: /\.(sa|sc)ss$/,
+        use: [
+          'vue-style-loader',
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          'sass-loader'
+        ]
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/,
+        loader: 'url-loader',
+        options: {
+          limit: 8192,
+          outputPath: 'images',
+          name: '[hash].[ext]'
+        }
       }
     ]
   },
@@ -73,6 +96,7 @@ module.exports = {
     alias: {
       "@/components": "../src/components",
       "@/images": "../static/image"
-    }
+    },
+    extensions: ['.js', '.vue', '.jsx']
   }
 }

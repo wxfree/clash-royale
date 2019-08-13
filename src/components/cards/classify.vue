@@ -23,14 +23,16 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
  .container {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    height: 160px;
+    & .card_name {
+      color: #000000;
+      text-align: center;
+    }
 }
-.card_name {
-    color: #000000;
-    text-align: center;
-}
+
 </style>

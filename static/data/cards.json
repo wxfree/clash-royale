@@ -4,55 +4,55 @@
       "name": "天狗",
       "rarity": "lengendary",
       "type": "troop",
-      "url": "http://localhost:8080/static/image/天狗.png"
+      "url": "http://localhost:8080/static/image/flydog.png"
     },
     {
       "id": 2,
       "name": "气球",
       "rarity": "epic",
       "type": "troop",
-      "url": "http://localhost:8080/static/image/气球.png"
+      "url": "http://localhost:8080/static/image/balloon.png"
     },
     {
       "id": 3,
       "name": "毒药",
       "rarity": "epic",
       "type": "spell",
-      "url": "http://localhost:8080/static/image/毒药.jpg"
+      "url": "http://localhost:8080/static/image/poison.jpg"
     },
     {
       "id": 4,
       "name": "胖子",
       "rarity": "rare",
       "type": "troop",
-      "url": "http://localhost:8080/static/image/胖子.png"
+      "url": "http://localhost:8080/static/image/fat.png"
     },
     {
       "id": 5,
       "name": "迫击炮",
       "rarity": "common",
       "type": "building",
-      "url": "http://localhost:8080/static/image/迫击炮.png"
+      "url": "http://localhost:8080/static/image/mortar.png"
     },
     {
       "id": 6,
       "name": "女巫",
       "rarity": "epic",
       "type": "troop",
-      "url": "http://localhost:8080/static/image/女巫.png"
+      "url": "http://localhost:8080/static/image/witch.png"
     },
     {
       "id": 7,
       "name": "飞桶",
       "rarity": "epic",
       "type": "spell",
-      "url": "http://localhost:8080/static/image/飞桶.png"
+      "url": "http://localhost:8080/static/image/bucket.png"
     },
     {
       "id": 8,
       "name": "地狱飞龙",
       "rarity": "lengendary",
       "type": "troop",
-      "url": "http://localhost:8080/static/image/地狱飞龙.png"
+      "url": "http://localhost:8080/static/image/dragon.png"
     }
   ]
