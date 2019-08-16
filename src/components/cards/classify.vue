@@ -1,12 +1,19 @@
 <template>
-    <div class="container">
-        <div class="item" v-for="item in cards" :key="item.id">
-            <a>
-                <img :src="item.url" alt="">
-                <p class="card_name">{{ item.name }}</p>
-            </a>
-        </div>
+  <div class="container">
+    <div
+      v-for="item in cards"
+      :key="item.id"
+      class="item"
+    >
+      <a>
+        <img
+          :src="item.url"
+          alt=""
+        >
+        <p class="card_name">{{ item.name }}</p>
+      </a>
     </div>
+  </div>
 </template>
 
 <script>

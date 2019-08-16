@@ -1,17 +1,17 @@
 <template>
-    <div class="main">
-        <div class="card-type">
-            <a
-                :class="{'text-border': true, 'curtype': curType === item}"
-                v-for="(item, index) in rarities"
-                :key="index"
-                @click="changeCardType(item)"
-            >
-                {{ item }}
-            </a>
-        </div>
-        <classify :cards="filterCards" />
+  <div class="main">
+    <div class="card-type">
+      <a
+        v-for="(item, index) in rarities"
+        :key="index"
+        :class="{'text-border': true, 'curtype': curType === item}"
+        @click="changeCardType(item)"
+      >
+        {{ item }}
+      </a>
     </div>
+    <classify :cards="filterCards" />
+  </div>
 </template>
 
 <script>
@@ -87,15 +87,6 @@ export default {
         ]
       }
     },
-    created () {
-      // console.log(this.filterCards)
-      axios.get('/static/data/cards.json')
-        .then(resp => {
-          console.log(resp)
-        })
-      console.log('num:', this.$store.state.num)
-      this.$store.commit('addNum')
-    },
     computed: {
       filterCards () {
         if (this.curType === 'all') {
@@ -104,6 +95,15 @@ export default {
           return this.cards.filter(v => v.rarity === this.curType)
         }
       }
+    },
+    created () {
+      // console.log(this.filterCards)
+      axios.get('/static/data/cards.json')
+        .then(resp => {
+          console.log(resp)
+        })
+      console.log('num:', this.$store.state.num)
+      this.$store.commit('addNum')
     },
     methods: {
       changeCardType (curType) {

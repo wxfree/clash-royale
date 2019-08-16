@@ -1,10 +1,12 @@
 <template>
-    <div>
-        <card-index />
-        <button v-on:click="locate">跳转新的单页</button>
-        <router-view></router-view>
-        <my-footer />
-    </div>
+  <div>
+    <card-index />
+    <button @click="locate">
+      跳转新的单页
+    </button>
+    <router-view />
+    <my-footer />
+  </div>
 </template>
 
 <script>
