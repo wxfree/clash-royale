@@ -101,6 +101,6 @@ module.exports = {
       "@/components": "../src/components",
       "@/images": "../static/image"
     },
-    extensions: ['.js', '.vue', '.jsx']
+    extensions: ['.js', '.vue', '.jsx', '.ts']
   }
 }

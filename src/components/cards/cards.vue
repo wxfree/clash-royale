@@ -98,10 +98,9 @@ export default {
     },
     created () {
       // console.log(this.filterCards)
-      axios.get('/static/data/cards.json')
-        .then(resp => {
-          console.log(resp)
-        })
+      this.getData().then(resp => {
+        console.log(resp)
+      })
       console.log('num:', this.$store.state.num)
       this.$store.commit('addNum')
     },
@@ -110,6 +109,10 @@ export default {
         this.curType = curType
         console.log(this.curType, this.filterCards)
         console.log(this.$store.state.num)
+      },
+      async getData() {
+        const resp = await axios.get('/static/data/cards.json')
+        return resp.data
       }
     }
 }
