@@ -1,5 +1,5 @@
 <template>
   <div>
-        clash-royale index
+    clash-royale index
   </div>
 </template>
