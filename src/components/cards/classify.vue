@@ -18,15 +18,15 @@
 
 <script>
 export default {
-    props: {
-      cards: {
-        required: true,
-        type: Array
-      }
+  props: {
+    cards: {
+      required: true,
+      type: Array,
     },
-    data () {
-      return {}
-    }
+  },
+  data() {
+    return {}
+  },
 }
 </script>
 

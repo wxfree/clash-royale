@@ -1,28 +1,30 @@
+// rules 0/off->关闭规则,1/warn->警告,2/error->提示错误
 module.exports = {
-  root: true,
   env: {
     browser: true,
+    es6: true,
     node: true,
-    es6: true
-  },
-  parserOptions: {
-    parser: 'babel-eslint',
-    sourceType: 'module',
-    ecmaVersion: 2017
   },
   extends: [
-    'plugin:vue/recommended'
+    'plugin:vue/essential',
+    'airbnb-base',
   ],
+  globals: {
+    Atomics: 'readonly',
+    SharedArrayBuffer: 'readonly',
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+  },
   plugins: [
-    'vue-libs'
+    'vue',
   ],
-  // add your custom rules here
   rules: {
-    'no-console': 'off',
-    'vue/no-v-html': 'off'
-    // 'no-unused-vars': 'off'
-    // "no-useless-escape":"off"
-    // 'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    // 'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
-  }
-}
+    'semi': 0,
+    'quotes': [2, 'single'],
+    'comma-dangle': 2, // 对象文字中的尾随逗号是有效的
+    'indent': ['error', 2],
+    'no-console': 0
+  },
+};

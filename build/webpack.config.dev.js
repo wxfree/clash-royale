@@ -1,19 +1,24 @@
 const webpack = require('webpack')
-const pkg = require('../package.json')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const {
-  CleanWebpackPlugin
+  CleanWebpackPlugin,
 } = require('clean-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require('path')
+// const pkg = require('../package.json')
+
 module.exports = {
   entry: path.resolve(__dirname, '../src/index.js'),
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, '../dist')
+    path: path.resolve(__dirname, '../dist'),
   },
   mode: 'development',
   devServer: {
+    overlay: {
+      warnings: true,
+      errors:true
+    },
     port: '3000',
     host: '0.0.0.0',
     hot: true,
@@ -21,38 +26,39 @@ module.exports = {
       '/static/*': {
         target: 'http://localhost:8080/',
         secure: false,
-        changeOrigin: true
+        changeOrigin: true,
       },
       '/api/*': {
         target: 'http://localhost:8080',
         secure: false,
-        changeOrigin: true
-      }
-    }
+        changeOrigin: true,
+      },
+    },
   },
   devtool: 'source-map',
   module: {
-    rules: [{
+    rules: [
+      {
         test: /\.(vue|js)$/,
         loader: 'eslint-loader',
         exclude: /node_modules/,
         include: /src/,
         enforce: 'pre',
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
+        // options: {
+        //   formatter: require('eslint-friendly-formatter'),
+        // },
       },
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        options: {
-          presets: ['@babel/env']
-        },
-        exclude: /node_modules/
+        // options: {
+        //   presets: ['@babel/env']
+        // },
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
@@ -60,9 +66,9 @@ module.exports = {
           'style-loader',
           'css-loader',
           {
-            loader: 'postcss-loader'
-          }
-        ]
+            loader: 'postcss-loader',
+          },
+        ],
       },
       {
         test: /\.(sa|sc)ss$/,
@@ -72,11 +78,11 @@ module.exports = {
           {
             loader: 'postcss-loader',
             options: {
-              sourceMap: true
-            }
+              sourceMap: true,
+            },
           },
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpg|jpeg|gif|svg)$/,
@@ -84,23 +90,23 @@ module.exports = {
         options: {
           limit: 8192,
           outputPath: 'images',
-          name: '[hash].[ext]'
-        }
-      }
-    ]
+          name: '[hash].[ext]',
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin(),
     new CleanWebpackPlugin(),
     new VueLoaderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   resolve: {
     alias: {
-      "@/components": "../src/components",
-      "@/images": "../static/image"
+      '@/components': '../src/components',
+      '@/images': '../static/image',
     },
-    extensions: ['.js', '.vue', '.jsx', '.ts']
-  }
+    extensions: ['.js', '.vue', '.jsx', '.ts'],
+  },
 }

@@ -4,20 +4,20 @@ import Vue from 'vue'
 Vue.use(Vuex)
 const state = {
   cards: [],
-  num: 1
+  num: 1,
 }
 
 const mutations = {
-  addCard (state, cards) {
+  addCard(cards) {
     state.cards = cards
   },
-  addNum (state) {
+  addNum() {
     state.num += 1
-  }
+  },
 }
 const actions = {}
 export default new Vuex.Store({
   state,
   mutations,
-  actions
+  actions,
 })
