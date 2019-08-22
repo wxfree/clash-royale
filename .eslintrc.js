@@ -7,13 +7,14 @@ module.exports = {
   },
   parserOptions: {
     parser: 'babel-eslint',
-    sourceType: 'module'
+    sourceType: 'module',
+    ecmaVersion: 2017
   },
   extends: [
     'plugin:vue/recommended'
   ],
   plugins: [
-    'vue'
+    'vue-libs'
   ],
   // add your custom rules here
   rules: {
