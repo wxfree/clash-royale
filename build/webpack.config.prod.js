@@ -5,6 +5,9 @@ const {
 } = require('clean-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const path = require('path')
+const OptimizeCSSAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin')
+const UglifyjsWebpackPlugin = require('uglifyjs-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 // const pkg = require('../package.json')
 
 module.exports = {
@@ -58,7 +61,8 @@ module.exports = {
     {
       test: /\.css$/,
       use: [
-        'style-loader',
+        // 'style-loader',
+        MiniCssExtractPlugin.loader,
         'css-loader',
         {
           loader: 'postcss-loader',
@@ -68,7 +72,8 @@ module.exports = {
     {
       test: /\.(sa|sc)ss$/,
       use: [
-        'vue-style-loader',
+        // 'vue-style-loader',
+        MiniCssExtractPlugin.loader,
         'css-loader',
         {
           loader: 'postcss-loader',
@@ -96,6 +101,9 @@ module.exports = {
     new VueLoaderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
+    new MiniCssExtractPlugin({
+      filename: 'style.[hash:8].css',
+    }),
   ],
   resolve: {
     alias: {
@@ -103,5 +111,16 @@ module.exports = {
       '@/images': '../static/image',
     },
     extensions: ['.js', '.vue', '.jsx', '.ts'],
+  },
+  optimization: {
+    minimizer: [
+      new UglifyjsWebpackPlugin({
+        uglifyOptions: {
+          compress: true,
+          parallel: true,
+        },
+      }),
+      new OptimizeCSSAssetsWebpackPlugin(),
+    ],
   },
 }
