@@ -25,6 +25,7 @@ module.exports = {
     'quotes': [2, 'single'],
     'comma-dangle': 2, // 对象文字中的尾随逗号是有效的
     'indent': ['error', 2],
-    'no-console': 0
+    'no-console': 0,
+    'linebreak-style': ["off", "windows"], // windows和macos都能用
   },
 };
