@@ -106,6 +106,7 @@ module.exports = {
     alias: {
       '@/components': '../src/components',
       '@/images': '../static/image',
+      // 'vue$': 'vue/dist/vue.esm.js',// runtime+compile可以编译template,否则就是runtime-only
     },
     extensions: ['.js', '.vue', '.jsx', '.ts'],
   },

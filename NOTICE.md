@@ -6,6 +6,7 @@
 6. 关于5的相关资料`https://blog.csdn.net/weixin_34151004/article/details/93175123`
 `https://segmentfault.com/q/1010000018937075/`这个仅供参考说是transform-runtime和useBuiltIns只能用一个
 `https://www.jianshu.com/p/d078b5f3036a`这个也蛮好的，可惜讲的是babel7.1,现在都用7.5.5了
+7. `import vue from 'vue'`默认使用的是runtime-only,入口挂载的方法使用render函数,使用runtime+compile版本可以在webpack的alias中添加`'vue$': 'vue/dist/vue.esm.js'`,这个时候可以编译template也可以使用render函数
 ```
   {
     "presets": [

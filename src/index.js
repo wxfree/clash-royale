@@ -6,8 +6,20 @@ import './css/global.css'
 
 const root = document.createElement('div')
 document.body.appendChild(root)
-new Vue({
+if (root) {
+  root.innerHTML = ''
+}
+const app = new Vue({
   store,
   router,
   render: (h) => h(App),
-}).$mount(root)
+})
+
+app.$mount(root)
+/*eslint-disable */
+// new Vue({
+//   components: { App },
+//   template: '<App />',
+//   store,
+//   router
+// }).$mount(root)
